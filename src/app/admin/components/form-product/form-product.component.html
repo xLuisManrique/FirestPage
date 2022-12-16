@@ -1,0 +1,53 @@
+<form [formGroup]="form" (ngSubmit)="saveProduct($event)">
+    <mat-card>
+        <mat-card-header>
+            <mat-card-title>Productos</mat-card-title>
+        </mat-card-header>
+
+    <mat-card-content>
+        <div class="row">
+            <div class="col-xs">
+                <mat-form-field>
+                    <input matInput placeholder="ID" formControlName="id" mat-Input type="text">
+                </mat-form-field>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-xs">
+                <mat-form-field>
+                    <input matInput placeholder="TITLE" formControlName="title" mat-Input type="text">
+                </mat-form-field>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-xs">
+                <mat-form-field>
+                    <input matInput placeholder="PRICE" formControlName="price" mat-Input type="number">
+                </mat-form-field>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-xs">
+                <textarea matInput placeholder="DESCRIPTION" formControlName="description" mat-Input></textarea>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-xs">
+                <img *ngIf="(image$ | async) as image" [src]="image" alt="">
+                <input type="file" (change)="uploadFile($event)")>
+            </div>
+        </div>
+
+
+    </mat-card-content>
+
+    <mat-card-actions>
+        <button [disabled]="form.invalid" mat-raised-button type="submit">Save</button>
+    </mat-card-actions>
+
+    </mat-card>
+</form>

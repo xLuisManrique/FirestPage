@@ -1,0 +1,26 @@
+<div *ngIf="product">
+<div class="shop-card">
+  <div class="title">
+    {{product.title}}
+  </div>
+
+  <div class="desc">
+    Training shoes
+  </div>
+
+  <div class="slider">
+    <figure data-color="#E24938, #A30F22">
+      <img [src]="product.images" alt="">
+    </figure>
+  </div>
+
+  <div class="price">{{product.price | currency }}</div>
+    <div class="description">{{product.description}}</div>
+</div>
+
+  <button (click)="createProduct">Crear</button>
+  <button (click)="updateProduct">Modificar</button>
+  <button (click)="deleteProduct">Eliminar</button>
+</div>
+
+

@@ -1,0 +1,17 @@
+<input type = "text" [(ngModel)]="title">
+    {{ title }}
+
+<button (click)="addItem()">Add items</button>
+
+<ul>
+    <li 
+    *ngIf="items.length === 0">Lista vacia
+    </li>
+        <li 
+        *ngFor="let name of items; index as i">
+        {{name}} {{ i }}
+            <button 
+                (click)="deleteItem(i)">delete
+            </button>
+        </li>
+</ul>

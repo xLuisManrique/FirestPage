@@ -20,6 +20,9 @@
             "outputPath": "dist/first-app",
             "index": "src/index.html",
             "main": "src/main.ts",
+            "allowedCommonJsDependencies": [
+              "lodash"
+            ],
             "polyfills": [
               "zone.js"
             ],
@@ -30,22 +33,32 @@
               "src/assets"
             ],
             "styles": [
+              "@angular/material/prebuilt-themes/deeppurple-amber.css",
+              "node_modules/flexboxgrid/dist/flexboxgrid.min.css",
+              
               "src/styles.scss"
             ],
-            "scripts": []
+            "scripts": [
+            ]
           },
           "configurations": {
             "production": {
               "budgets": [
                 {
                   "type": "initial",
-                  "maximumWarning": "500kb",
-                  "maximumError": "1mb"
+                  "maximumWarning": "10mb",
+                  "maximumError": "10mb"
                 },
                 {
                   "type": "anyComponentStyle",
-                  "maximumWarning": "2kb",
-                  "maximumError": "4kb"
+                  "maximumWarning": "10mb",
+                  "maximumError": "10mb"
+                }
+              ],
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.prod.ts"
                 }
               ],
               "outputHashing": "all"
@@ -57,6 +70,34 @@
               "extractLicenses": false,
               "sourceMap": true,
               "namedChunks": true
+            },
+            "stag": {
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "5mb",
+                  "maximumError": "8mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "2kb",
+                  "maximumError": "4kb"
+                }
+              ],
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.stag.ts"
+                }
+              ],
+              "outputHashing": "all",
+              "optimization": true,
+              "sourceMap": false,
+              "extractLicenses": true,
+              "namedChunks": false,
+              "aot": false,
+              "vendorChunk": false,
+              "buildOptimizer": false
             }
           },
           "defaultConfiguration": "production"
@@ -69,6 +110,9 @@
             },
             "development": {
               "browserTarget": "first-app:build:development"
+            },
+            "stag":{
+              "browserTarget": "first-app:build:stag"
             }
           },
           "defaultConfiguration": "development"
@@ -93,6 +137,7 @@
               "src/assets"
             ],
             "styles": [
+              "@angular/material/prebuilt-themes/deeppurple-amber.css",
               "src/styles.scss"
             ],
             "scripts": []
@@ -100,5 +145,8 @@
         }
       }
     }
+  },
+  "cli": {
+    "analytics": "f1cd543d-44ca-4661-ac9a-934ef66adb24"
   }
 }

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+</head>
+<body>
+  <footer class="footer">
+  	 <div class="container">
+  	 	<div class="row">
+  	 		<div class="footer-col">
+  	 			<h4>About Us</h4>
+  	 			<ul>
+					<p>This page is created to have a repository.
+					For more information and documentation of this repository
+					contact me through my social networks or put your email
+					in the box.
+					</p>
+				<mat-form-field>
+					<mat-label>Email Address</mat-label>
+					<input matInput placeholder="email@example.com" [formControl]="emailField" type="email">
+					  <mat-error *ngIf="emailFormControl.hasError('required')">
+						Email is <strong>required</strong>
+					  </mat-error>
+				</mat-form-field>
+				<button mat-raised-button [disabled]="emailField.invalid" (click)="sendEmail()">Send</button>
+  	 			</ul>
+  	 		</div>
+  	 		<div class="footer-col">
+  	 			<h4>Help</h4>
+  	 			<ul>
+            <li><a href="./contact">Contact Us</a></li>
+            <li><a href="https://www.linkedin.com/in/soyluismanrique/">LinkedIn</a></li>
+			<li><a href="https://github.com/xLuisManrique/">GitHub</a></li>
+            <li><a href="https://t.me/xLuisManrique/">Telegram</a></li>
+            <li><a href="https://wa.me/+573148700112/">Whatsapp</a></li>
+  	 			</ul>
+  	 		</div>
+  	 		<div class="footer-col">
+  	 			<h4>Code Source</h4>
+  	 			<ul>
+            <li><a href="/products">Python</a></li>
+            <li><a href="/products">Java</a></li>
+            <li><a href="/products">Angular</a></li>
+            <li><a href="/products">Websites</a></li>
+            <li><a href="/products">Games</a></li>
+  	 			</ul>
+  	 		</div>
+  	 		<div class="footer-col">
+  	 			<h4>follow us</h4>
+  	 			<div class="social-links">
+			 <a class="github" href="https://github.com/xLuisManrique/"><i class="fa-brands fa-github"></i></a>
+             <a class="telegram" href="https://t.me/xLuisManrique/"><i class="fab fa-telegram"></i></a>
+             <a class="whatsapp" href="https://wa.me/+573148700112/"><i class="fab fa-whatsapp"></i></a>
+             <a class="linkedin" href="https://www.linkedin.com/in/soyluismanrique/"><i class="fab fa-linkedin-in"></i></a>
+             <a class="youtube" href="https://www.youtube.com/@Soyluismanrique"><i class="fab fa-youtube"></i></a>
+  	 			</div>
+  	 		</div>
+  	 	</div>
+  	 </div>
+  </footer>
+</body>
+</html>

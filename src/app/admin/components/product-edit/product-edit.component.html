@@ -1,0 +1,42 @@
+<form [formGroup]="form" (ngSubmit)="saveProduct($event)">
+    <mat-card>
+        <mat-card-header>
+            <mat-card-title>Productos</mat-card-title>
+        </mat-card-header>
+
+    <mat-card-content>
+
+        <div class="row">
+            <div class="col-xs">
+                <mat-form-field>
+                    <input matInput placeholder="TITLE" formControlName="title" mat-Input type="text">
+                </mat-form-field>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-xs">
+              <mat-form-field>
+                <input placeholder="Price" formControlName="price" matInput type="number">
+              </mat-form-field>
+              <div *ngIf="priceField.errors && priceField.dirty">
+                <p *ngIf="priceField.hasError('required')">Campo Requerido</p>
+              </div>
+            </div>
+          </div>
+
+        <div class="row">
+            <div class="col-xs">
+                <textarea matInput placeholder="DESCRIPTION" formControlName="description" mat-Input></textarea>
+            </div>
+        </div>
+    </mat-card-content>
+
+    <mat-card-actions>
+
+        <button [disabled]="form.invalid" mat-raised-button type="submit">Guardar</button>
+
+    </mat-card-actions>
+
+    </mat-card>
+</form>

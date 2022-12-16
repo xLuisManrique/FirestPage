@@ -1,0 +1,98 @@
+<ng-container [ngSwitch]="stepperOrientation | async">
+    <div *ngSwitchCase="'horizontal'"></div>
+    <div *ngSwitchCase="'vertical'"></div>
+  </ng-container>
+
+  <mat-stepper
+  class="example-stepper"
+  [orientation]="(stepperOrientation | async)!">
+    <mat-step label="Productos">
+        <div *ngIf="(products$ | async) as products">
+            <p *ngIf="products.length === 0">No Existen Productos en el Carrito</p>
+            <div class="row" *ngFor="let product of products">
+              <div class="col-xs-12 col-sm-2 col-md-2">
+                <div class="box">
+                  <img class="image" [src]="product.images" alt="">
+                </div>
+              </div>
+              <div class="col-xs-12 col-sm-5 col-md-5">
+                <div class="box">
+                  {{product.title}}
+                </div>
+              </div>
+              <div class="col-xs-12 col-sm-5 col-md-5">
+                <div class="box">
+                  {{product.price}}
+                </div>
+              </div>
+            </div>
+        </div>
+        <div>
+            <button mat-button matStepperNext>Next</button>
+        </div>
+    </mat-step>
+
+    <mat-step [stepControl]="firstFormGroup" label="Datos Personales">
+        <form [formGroup]="firstFormGroup">
+
+        <mat-form-field appearance="fill">
+            <mat-label>Nombre</mat-label>
+            <input matInput placeholder="Last name, First name" formControlName="firstCtrl" required>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+          <mat-label>Cédula</mat-label>
+          <input matInput placeholder="Numero de Documento" formControlName="firstCtrl" required>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+            <mat-label>Telefono</mat-label>
+            <input matInput formControlName="firstCtrl" placeholder="Ex. +XX 321 123 1234" required>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+          <mat-label>Correo Electronico</mat-label>
+          <input matInput placeholder="Ex. +XX 321 123 1234">
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+            <mat-label>Ciudad</mat-label>
+            <input matInput formControlName="firstCtrl" placeholder="" required>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+          <mat-label>Direccion</mat-label>
+          <input matInput formControlName="firstCtrl" placeholder="" required>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+          <mat-label>Codigo Postal</mat-label>
+          <input matInput placeholder="">
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+          <mat-label>Nota Adicional</mat-label>
+          <textarea matInput placeholder="Escribe alguna nota adicional o solicitud especial"></textarea>
+        </mat-form-field>
+
+          <div>
+            <button mat-button matStepperPrevious>Back</button>
+            <button mat-button matStepperNext>Next</button>
+          </div>
+        </form>
+      </mat-step>
+
+      <mat-step [stepControl]="secondFormGroup" label="Pagos">
+        <form [formGroup]="secondFormGroup">
+        
+            <p>PAGOS</p>
+          
+          <div>
+            <button mat-button matStepperPrevious>Back</button>
+          </div>
+        </form>
+      </mat-step>
+
+</mat-stepper>
+
+
