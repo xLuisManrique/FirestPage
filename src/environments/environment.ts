@@ -5,7 +5,7 @@
 export const environment = {
     production: false,
     API_URL: '',
-    firebase: {
+    firebaseConfig: {
       apiKey: "AIzaSyCPo_7hgT0GW7A4eqFcUV_YdX64DAGOk-g",
       authDomain: "luman-32eff.firebaseapp.com",
       projectId: "luman-32eff",

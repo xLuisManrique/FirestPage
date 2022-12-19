@@ -21,6 +21,7 @@ import { AngularFireModule } from '@angular/fire/compat'
 import { environment } from './../environments/environment'
 import { AngularFireAuthModule } from '@angular/fire/compat/auth';
 import { AngularFireStorageModule } from '@angular/fire/compat/storage';
+import { ContactscriptService } from './cargar-scripts/contactscript.service'
 
 
 
@@ -39,7 +40,7 @@ import { AngularFireStorageModule } from '@angular/fire/compat/storage';
         
     ],
     schemas: [CUSTOM_ELEMENTS_SCHEMA],
-    providers: [],
+    providers: [ContactscriptService],
     bootstrap: [AppComponent],
     imports: [
         BrowserModule,
@@ -52,7 +53,7 @@ import { AngularFireStorageModule } from '@angular/fire/compat/storage';
         HttpClientModule,
         ReactiveFormsModule,
         MatFormFieldModule,
-        AngularFireModule.initializeApp(environment.firebase),
+        AngularFireModule.initializeApp(environment.firebaseConfig),
         AngularFireAuthModule,
         AngularFireStorageModule
     ]

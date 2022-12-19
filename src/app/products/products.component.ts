@@ -12,11 +12,14 @@ export class ProductsComponent implements OnInit {
   
   products: Product[] = [];
 
+
   constructor(
     private productsService: ProductsService
   ){}
+
   ngOnInit() { 
     this.fetchProducts();
+
   }
 
   clickProduct(id: number) {
@@ -29,6 +32,9 @@ export class ProductsComponent implements OnInit {
       this.products = products;
     });
   }
+
+
+
 
 }
 

@@ -1,3 +1,139 @@
 
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact</title>
+    <link rel="stylesheet" href="contact.component.scss">
+    <script
+      src="https://kit.fontawesome.com/64d58efce2.js"
+      crossorigin="anonymous"
+    ></script>
 
 
+  </head>
+  <body>
+
+    <div class="container">
+      <img src="./../../assets/images/shape.png" class="square" alt="" />
+      
+
+      <div class="form">
+        <div class="contact-info">
+          <h3 class="title">Assistant Services</h3>
+          <p class="text">
+            This contact page is not functional, only visual.
+            For more information and documentation of 
+            this repository contact me through my social networks,
+            my phone number or email address.
+          </p>
+
+          <div class="contacInfo">
+            <div class="box">
+              <img src="./../../assets/images/location.png" class="icon" alt="" />
+              <p>Union Europea</p>
+            </div>
+            <div class="box">
+              <img src="./../../assets/images/email.png" class="icon" alt="" />
+              <p>luisito_099@hotmail.com</p>
+            </div>
+            <div class="box">
+              <img src="./../../assets/images/phone.png" class="icon" alt="" />
+              <p>+33 6 02 48 10 20</p>
+            </div>
+          </div>
+
+        
+
+          <div class="social-media">
+            <h4>Connect with us :</h4>
+            <div class="social-icons">
+              <a class="telegram" href="https://t.me/xLuisManrique/" target="_blank"><i class="fab fa-telegram"></i></a>
+              <a class="github" href="https://github.com/xLuisManrique/" target="_blank"><i class="fab fa fa-github"></i></a>
+              <a class="youtube" href="https://www.youtube.com/@Soyluismanrique" target="_blank"><i class="fab fa-youtube"></i></a>
+              <a class ="linkedin" href="https://www.linkedin.com/in/soyluismanrique/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+          </div>
+        </div>
+
+        
+        <div action="contact.compact.html" autocomplete="off" class="contact-form">
+          <span class="circle one"></span>
+          <span class="circle two"></span>
+
+          <form  (ngSubmit)="submitForm()">
+            <h3 class="title">Contact us</h3>
+
+            <div class="inputBox">
+              <input type="text" name="" class="input" required="required"  [(ngModel)]="name">
+              <span>Name</span>
+            </div>
+
+            <div class="inputBox">
+              <input type="text" name="" class="input" required="required" [(ngModel)]="email">
+              <span>Email</span>
+            </div>
+
+            <div class="inputBox">
+              <input type="tel" name="" class="input" required="required" />
+              <span>Phone</span>
+            
+            </div>
+
+            <div class="inputBox" >
+              <textarea type="message" name="message" class="input" required="required"></textarea>
+              <span >Message</span>
+             
+            </div>
+
+            <div class="inputBox">
+            <input type="submit" value="Send" name="" />
+          </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    
+  </body>
+</html>
+
+
+
+<!--
+<section class="hero is-primary is-bold">
+  <div class="hero-body">
+    <div class="container">
+      <h1 class="title">Contact Us</h1>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <form (ngSubmit)="submitForm()">
+
+      <div class="field">
+        <label class="label">Name</label>
+        <input type="text" name="name" class="input" [(ngModel)]="name">
+      </div>
+
+      <div class="field">
+        <label class="label">Name</label>
+        <input type="email" name="name" class="input" [(ngModel)]="email">
+      </div>
+
+      <div class="field">
+        <label class="label">Name</label>
+        <textarea type="message" name="textarea" class="input" [(ngModel)]="message"></textarea>
+      </div>
+
+      <button type="submit" class="button is-large is-warning">
+        Send
+      </button>
+      
+    </form>
+  </div>
+</section>
+-->
